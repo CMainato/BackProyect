@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "09e99f45-17f2-4863-b2b5-7ca2132ff00a",
+		"name": "Hospedaje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10030327"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"eLVER\",\r\n\t\"apellido\": \"hECHEVERRIA\",\r\n\t\"cedula\": \"17896874563\",\r\n\t\"email\": \"maria@gmail.com\",\r\n\t\"telefono\": \"1236547896\",\r\n\t\"direccion\": \"CLLW 4 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 2,\r\n    \"nombre\": \"hugo\",\r\n\t\"apellido\": \"gutierrez\",\r\n\t\"cedula\": \"1789687452\",\r\n\t\"email\": \"maria@gmail.com\",\r\n\t\"telefono\": \"1236547896\",\r\n\t\"direccion\": \"CLLW 4 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente-cedula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/cliente/buscar_cedula?cedula=17896874563",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"cliente",
+								"buscar_cedula"
+							],
+							"query": [
+								{
+									"key": "cedula",
+									"value": "17896874563"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/cliente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipo mascota",
+			"item": [
+				{
+					"name": "tipos mascota",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/tipo_mascota",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"tipo_mascota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo Mascota",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreTipoMascota\": \"Gato\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/tipo_mascota",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"tipo_mascota"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mascotas",
+			"item": [
+				{
+					"name": "Mascotas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Rocky\",\r\n    \"raza\": \"Labrador\",\r\n    \"fechaNacimiento\": \"2019-05-15\",\r\n    \"comentario\": \"Travieso\",\r\n    \"tipoMascota\": {\r\n        \"tipoMascotaId\": 1\r\n    },\r\n    \"cliente\": {\r\n        \"idCliente\": 2\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/mascota",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"mascota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista mascotas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/mascota",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"mascota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista mascotaBydCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/mascota/cliente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"mascota",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMascota\": 1,\r\n    \"nombre\": \"BRUNO\",\r\n    \"raza\": \"Snauser\",\r\n    \"fechaNacimiento\": \"2013-05-15\",\r\n    \"comentario\": \"No se parece a la descripcion\",\r\n        \"tipoMascotaId\": 1,\r\n        \"idCliente\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/mascota/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"mascota",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mascota por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/mascota/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"mascota",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar mascota",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/mascota/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"mascota",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Servicios/hospedaje",
+			"item": [
+				{
+					"name": "Lista servicios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/servicio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear servicio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Baño\",\r\n\t\"descripcion\": \"Baño en agua fria o caliente gratis peinado\",\r\n\t\"precio\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/servicio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edicion servicio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idServicio\": 2,\r\n    \"nombre\": \"Baño\",\r\n\t\"descripcion\": \"Baño en agua fria o caliente gratis peinado y shapoo a eleccion\",\r\n\t\"precio\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/servicio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"servicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servicio por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/servicio/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"servicio",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "Nueva reserva",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCliente\": 2,\r\n  \"idMascota\": 2,\r\n  \"serviciosIds\": [1,2],\r\n  \"cantidad\": 1,\r\n  \"fechaInicio\": \"2024-07-15\",\r\n  \"fechaFin\": \"2024-07-18\",\r\n  \"estado\": \"PENDIENTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/reserva",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"reserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar reserva",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCliente\": 3,\r\n  \"idMascota\": 1,\r\n  \"serviciosIds\": [2],\r\n  \"cantidad\": 1,\r\n  \"fechaInicio\": \"2024-07-15\",\r\n  \"fechaFin\": \"2024-07-20\",\r\n  \"estado\": \"PENDIENTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/reserva/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"reserva",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista reservas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/reserva",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"reserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservas por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/reserva/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"reserva",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservas por id CLIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/reserva/cliente/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"reserva",
+								"cliente",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/hospedaje/reserva/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"hospedaje",
+								"reserva",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
